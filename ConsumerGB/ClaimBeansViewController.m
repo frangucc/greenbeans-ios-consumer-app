@@ -63,6 +63,8 @@
         [UIView animateWithDuration:0.3 animations:^ {
             _claimBeansBlockView.frame = CGRectMake(0, 155, _claimBeansBlockView.frame.size.width, _claimBeansBlockView.frame.size.height);
         }];
+        
+        [_errMsg setHidden:NO];
     }
 }
 
@@ -78,6 +80,7 @@
 {
     [self setTokenInput:nil];
     [self setClaimBeansBlockView:nil];
+    [self setErrMsg:nil];
     [super viewDidUnload];
 }
 @end

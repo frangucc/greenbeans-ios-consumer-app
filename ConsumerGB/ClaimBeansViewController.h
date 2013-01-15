@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *tokenInput;
 @property (weak, nonatomic) IBOutlet UIView *claimBeansBlockView;
+@property (weak, nonatomic) IBOutlet UIImageView *errMsg;
 
 - (IBAction)hideKeyboard:(id)sender;
 - (IBAction)hideKeyboardTouchDown:(id)sender;

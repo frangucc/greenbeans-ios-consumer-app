@@ -138,6 +138,10 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="claim_beans_err_msg.png" id="MTc-Yv-cIu">
+                                <rect key="frame" x="25" y="122" width="271" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <connections>
@@ -147,6 +151,7 @@
                     <navigationItem key="navigationItem" id="ZpK-q9-rPg"/>
                     <connections>
                         <outlet property="claimBeansBlockView" destination="0oj-qK-eFl" id="i4Z-3G-PON"/>
+                        <outlet property="errMsg" destination="MTc-Yv-cIu" id="8jb-0p-v1I"/>
                         <outlet property="tokenInput" destination="VU6-YW-0Q4" id="KM5-0X-elq"/>
                     </connections>
                 </viewController>
@@ -177,6 +182,7 @@
     <resources>
         <image name="cash_btn.png" width="213" height="10"/>
         <image name="claim_beans_btn.png" width="274" height="42"/>
+        <image name="claim_beans_err_msg.png" width="271" height="26"/>
         <image name="claim_bg.png" width="320" height="548"/>
         <image name="home_pattern.png" width="320" height="568"/>
         <image name="hustle_btn.png" width="166" height="12"/>
@@ -193,6 +199,7 @@
                 <relationship kind="action" name="hideKeyboard:"/>
                 <relationship kind="action" name="hideKeyboardTouchDown:"/>
                 <relationship kind="outlet" name="claimBeansBlockView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="errMsg" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="tokenInput" candidateClass="UITextField"/>
             </relationships>
         </class>
