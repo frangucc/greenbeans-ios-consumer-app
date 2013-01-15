@@ -17,8 +17,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Home pattern image
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"home_pattern.png"]]];
 }
 
 - (void)didReceiveMemoryWarning

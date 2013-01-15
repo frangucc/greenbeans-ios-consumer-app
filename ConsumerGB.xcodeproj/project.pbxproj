@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D3682F6A16A50E7200B60B57 /* claim_beans_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = D3682F6216A50E7200B60B57 /* claim_beans_btn.png */; };
+		D3682F6B16A50E7200B60B57 /* claim_beans_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3682F6316A50E7200B60B57 /* claim_beans_btn@2x.png */; };
+		D3682F6C16A50E7200B60B57 /* claim_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D3682F6416A50E7200B60B57 /* claim_bg.png */; };
+		D3682F6D16A50E7200B60B57 /* claim_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3682F6516A50E7200B60B57 /* claim_bg@2x.png */; };
+		D3682F6E16A50E7200B60B57 /* my_beans_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = D3682F6616A50E7200B60B57 /* my_beans_btn.png */; };
+		D3682F6F16A50E7200B60B57 /* my_beans_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3682F6716A50E7200B60B57 /* my_beans_btn@2x.png */; };
+		D3682F7016A50E7200B60B57 /* token_input.png in Resources */ = {isa = PBXBuildFile; fileRef = D3682F6816A50E7200B60B57 /* token_input.png */; };
+		D3682F7116A50E7200B60B57 /* token_input@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3682F6916A50E7200B60B57 /* token_input@2x.png */; };
+		D3682F7516A50FE700B60B57 /* ClaimBeansViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3682F7416A50FE700B60B57 /* ClaimBeansViewController.m */; };
 		D399FEB616A3BCCF00065F17 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D399FEB516A3BCCF00065F17 /* UIKit.framework */; };
 		D399FEB816A3BCCF00065F17 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D399FEB716A3BCCF00065F17 /* Foundation.framework */; };
 		D399FEBA16A3BCCF00065F17 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D399FEB916A3BCCF00065F17 /* CoreGraphics.framework */; };
@@ -32,6 +41,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D3682F6216A50E7200B60B57 /* claim_beans_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = claim_beans_btn.png; sourceTree = "<group>"; };
+		D3682F6316A50E7200B60B57 /* claim_beans_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claim_beans_btn@2x.png"; sourceTree = "<group>"; };
+		D3682F6416A50E7200B60B57 /* claim_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = claim_bg.png; sourceTree = "<group>"; };
+		D3682F6516A50E7200B60B57 /* claim_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claim_bg@2x.png"; sourceTree = "<group>"; };
+		D3682F6616A50E7200B60B57 /* my_beans_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = my_beans_btn.png; sourceTree = "<group>"; };
+		D3682F6716A50E7200B60B57 /* my_beans_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my_beans_btn@2x.png"; sourceTree = "<group>"; };
+		D3682F6816A50E7200B60B57 /* token_input.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = token_input.png; sourceTree = "<group>"; };
+		D3682F6916A50E7200B60B57 /* token_input@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "token_input@2x.png"; sourceTree = "<group>"; };
+		D3682F7316A50FE700B60B57 /* ClaimBeansViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClaimBeansViewController.h; sourceTree = "<group>"; };
+		D3682F7416A50FE700B60B57 /* ClaimBeansViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClaimBeansViewController.m; sourceTree = "<group>"; };
 		D399FEB116A3BCCF00065F17 /* ConsumerGB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConsumerGB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D399FEB516A3BCCF00065F17 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D399FEB716A3BCCF00065F17 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -75,6 +94,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D3682F6116A50E7200B60B57 /* claimbeans */ = {
+			isa = PBXGroup;
+			children = (
+				D3682F6216A50E7200B60B57 /* claim_beans_btn.png */,
+				D3682F6316A50E7200B60B57 /* claim_beans_btn@2x.png */,
+				D3682F6416A50E7200B60B57 /* claim_bg.png */,
+				D3682F6516A50E7200B60B57 /* claim_bg@2x.png */,
+				D3682F6616A50E7200B60B57 /* my_beans_btn.png */,
+				D3682F6716A50E7200B60B57 /* my_beans_btn@2x.png */,
+				D3682F6816A50E7200B60B57 /* token_input.png */,
+				D3682F6916A50E7200B60B57 /* token_input@2x.png */,
+			);
+			path = claimbeans;
+			sourceTree = "<group>";
+		};
 		D399FEA616A3BCCF00065F17 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +145,8 @@
 				D399FED016A3BCCF00065F17 /* MainStoryboard_iPad.storyboard */,
 				D399FED316A3BCCF00065F17 /* ViewController.h */,
 				D399FED416A3BCCF00065F17 /* ViewController.m */,
+				D3682F7316A50FE700B60B57 /* ClaimBeansViewController.h */,
+				D3682F7416A50FE700B60B57 /* ClaimBeansViewController.m */,
 				D399FEDB16A3C76800065F17 /* Resources */,
 				D399FEBC16A3BCCF00065F17 /* Supporting Files */,
 			);
@@ -134,6 +170,7 @@
 		D399FEDB16A3C76800065F17 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D3682F6116A50E7200B60B57 /* claimbeans */,
 				D399FEDC16A3C91D00065F17 /* splashexplainer */,
 			);
 			name = Resources;
@@ -223,6 +260,14 @@
 				D399FF0716A3F59A00065F17 /* home_pattern.png in Resources */,
 				D399FF0816A3F59A00065F17 /* home_pattern@2x.png in Resources */,
 				D399FF0A16A3FBFC00065F17 /* cash_btn.png in Resources */,
+				D3682F6A16A50E7200B60B57 /* claim_beans_btn.png in Resources */,
+				D3682F6B16A50E7200B60B57 /* claim_beans_btn@2x.png in Resources */,
+				D3682F6C16A50E7200B60B57 /* claim_bg.png in Resources */,
+				D3682F6D16A50E7200B60B57 /* claim_bg@2x.png in Resources */,
+				D3682F6E16A50E7200B60B57 /* my_beans_btn.png in Resources */,
+				D3682F6F16A50E7200B60B57 /* my_beans_btn@2x.png in Resources */,
+				D3682F7016A50E7200B60B57 /* token_input.png in Resources */,
+				D3682F7116A50E7200B60B57 /* token_input@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +281,7 @@
 				D399FEC216A3BCCF00065F17 /* main.m in Sources */,
 				D399FEC616A3BCCF00065F17 /* AppDelegate.m in Sources */,
 				D399FED516A3BCCF00065F17 /* ViewController.m in Sources */,
+				D3682F7516A50FE700B60B57 /* ClaimBeansViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +410,7 @@
 				D399FEDA16A3BCCF00065F17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
