@@ -12,6 +12,7 @@
 @interface ClaimBeansViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextField *tokenInput;
+@property (weak, nonatomic) IBOutlet UIView *claimBeansBlockView;
 
 - (IBAction)hideKeyboard:(id)sender;
 - (IBAction)hideKeyboardTouchDown:(id)sender;

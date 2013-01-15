@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B2C217F16A57D8200542775 /* claim_beans_err_msg.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B2C217D16A57D8200542775 /* claim_beans_err_msg.png */; };
+		7B2C218016A57D8200542775 /* claim_beans_err_msg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B2C217E16A57D8200542775 /* claim_beans_err_msg@2x.png */; };
 		D3682F6A16A50E7200B60B57 /* claim_beans_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = D3682F6216A50E7200B60B57 /* claim_beans_btn.png */; };
 		D3682F6B16A50E7200B60B57 /* claim_beans_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3682F6316A50E7200B60B57 /* claim_beans_btn@2x.png */; };
 		D3682F6C16A50E7200B60B57 /* claim_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D3682F6416A50E7200B60B57 /* claim_bg.png */; };
@@ -68,6 +70,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B2C217D16A57D8200542775 /* claim_beans_err_msg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = claim_beans_err_msg.png; sourceTree = "<group>"; };
+		7B2C217E16A57D8200542775 /* claim_beans_err_msg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claim_beans_err_msg@2x.png"; sourceTree = "<group>"; };
 		D3682F6216A50E7200B60B57 /* claim_beans_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = claim_beans_btn.png; sourceTree = "<group>"; };
 		D3682F6316A50E7200B60B57 /* claim_beans_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "claim_beans_btn@2x.png"; sourceTree = "<group>"; };
 		D3682F6416A50E7200B60B57 /* claim_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = claim_bg.png; sourceTree = "<group>"; };
@@ -183,6 +187,8 @@
 		D3682F6116A50E7200B60B57 /* claimbeans */ = {
 			isa = PBXGroup;
 			children = (
+				7B2C217D16A57D8200542775 /* claim_beans_err_msg.png */,
+				7B2C217E16A57D8200542775 /* claim_beans_err_msg@2x.png */,
 				D3682F6216A50E7200B60B57 /* claim_beans_btn.png */,
 				D3682F6316A50E7200B60B57 /* claim_beans_btn@2x.png */,
 				D3682F6416A50E7200B60B57 /* claim_bg.png */,
@@ -449,6 +455,8 @@
 				D3682F6F16A50E7200B60B57 /* my_beans_btn@2x.png in Resources */,
 				D3682F7016A50E7200B60B57 /* token_input.png in Resources */,
 				D3682F7116A50E7200B60B57 /* token_input@2x.png in Resources */,
+				7B2C217F16A57D8200542775 /* claim_beans_err_msg.png in Resources */,
+				7B2C218016A57D8200542775 /* claim_beans_err_msg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

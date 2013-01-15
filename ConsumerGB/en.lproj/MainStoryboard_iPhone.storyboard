@@ -93,15 +93,15 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="0oj-qK-eFl">
-                                <rect key="frame" x="15" y="121" width="290" height="100"/>
+                                <rect key="frame" x="0.0" y="121" width="320" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="token_input.png" id="MKl-yE-GOD">
-                                        <rect key="frame" x="9" y="1" width="272" height="39"/>
+                                        <rect key="frame" x="24" y="1" width="272" height="39"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="VU6-YW-0Q4">
-                                        <rect key="frame" x="15" y="6" width="260" height="30"/>
+                                        <rect key="frame" x="30" y="6" width="260" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -110,7 +110,7 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9S1-ye-Jvd" userLabel="claimBeansButton">
-                                        <rect key="frame" x="8" y="52" width="274" height="42"/>
+                                        <rect key="frame" x="23" y="52" width="274" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="claim_beans_btn.png">
@@ -146,6 +146,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ZpK-q9-rPg"/>
                     <connections>
+                        <outlet property="claimBeansBlockView" destination="0oj-qK-eFl" id="i4Z-3G-PON"/>
                         <outlet property="tokenInput" destination="VU6-YW-0Q4" id="KM5-0X-elq"/>
                     </connections>
                 </viewController>
@@ -191,6 +192,7 @@
                 <relationship kind="action" name="claimBeansAction:"/>
                 <relationship kind="action" name="hideKeyboard:"/>
                 <relationship kind="action" name="hideKeyboardTouchDown:"/>
+                <relationship kind="outlet" name="claimBeansBlockView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="tokenInput" candidateClass="UITextField"/>
             </relationships>
         </class>
