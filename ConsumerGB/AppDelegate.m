@@ -13,6 +13,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    // Customize nav bar bg
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"bar_top_w_title.png"] forBarMetrics:UIBarMetricsDefault];
+
+    // Customize Back button
+    UIImage *backButton = [[UIImage imageNamed:@"back_btn.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 3, 3, 3)];
+    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backButton forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    
     return YES;
 }
 							

@@ -53,17 +53,16 @@
     NSLog(@" checkBeanCodesSuccess: %@", notification.object);
     
     BOOL isBeanCodeValid = [[notification.object valueForKey:@"valid"] intValue];
-//    NSString *resultMsg = [notification.object objectForKey:@"message"];
 
     if (isBeanCodeValid == YES) {
-        NSLog(@"Valid bean code, go on...");
+        NSLog(@"Valid bean code, go to Home Beans: %@", self.navigationController);
+        [self performSegueWithIdentifier:@"toHomeBeansSegue" sender:self];
     } else {
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Checking Bean Code" message:resultMsg delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//        [alert show];
+        // Anim: move claim beans block down to show the error message
         [UIView animateWithDuration:0.3 animations:^ {
             _claimBeansBlockView.frame = CGRectMake(0, 155, _claimBeansBlockView.frame.size.width, _claimBeansBlockView.frame.size.height);
         }];
-        
+        // Show the error message box
         [_errMsg setHidden:NO];
     }
 }
@@ -78,9 +77,9 @@
 
 - (void)viewDidUnload
 {
+    [super viewDidUnload];
     [self setTokenInput:nil];
     [self setClaimBeansBlockView:nil];
     [self setErrMsg:nil];
-    [super viewDidUnload];
 }
 @end
