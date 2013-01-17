@@ -29,11 +29,31 @@
     UIBarButtonItem *leftBtn = [[UIBarButtonItem alloc] initWithCustomView:backBtnView];
     self.navigationItem.leftBarButtonItems = [NSArray arrayWithObjects:leftBtn, nil];
 
+    // Add Star button
+    UIButton *starBtn =  [UIButton buttonWithType:UIButtonTypeCustom];
+    [starBtn setBackgroundImage:[UIImage imageNamed:@"star_btn.png"] forState:UIControlStateNormal];
+    [starBtn addTarget:self action:@selector(starBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    [starBtn setFrame:CGRectMake(0, 0, 43, 33)];
+    UIView *starBtnView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 43, 33)];
+    starBtnView.bounds = CGRectOffset(backBtnView.bounds, -15, 0);
+    [starBtnView addSubview:starBtn];
+    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithCustomView:starBtnView];
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:rightBtn, nil];
+    
+    // Add point placeholder
+    UIImageView *pointBg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"point_bg.png"]];
+    [pointBg setFrame:CGRectMake(261, 14, 18, 18)];
+    [self.navigationController.navigationBar addSubview:pointBg];
 }
 
 - (void)backBtnAction:(id)sender
 {
     [self.tabBarController.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)starBtnAction:(id)sender
+{
+    NSLog(@"starBtnAction");
 }
 
 - (void)didReceiveMemoryWarning
