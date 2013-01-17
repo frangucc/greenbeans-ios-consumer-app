@@ -44,6 +44,25 @@
     UIImageView *pointBg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"point_bg.png"]];
     [pointBg setFrame:CGRectMake(261, 14, 18, 18)];
     [self.navigationController.navigationBar addSubview:pointBg];
+    
+    // Temporary only: set point values
+    UILabel *starPoint = [[UILabel alloc] initWithFrame:CGRectMake(266, 13, 20, 20)];
+    starPoint.backgroundColor = [UIColor clearColor];
+    starPoint.shadowColor = [UIColor whiteColor];
+    starPoint.shadowOffset = CGSizeMake(0, 1);
+    starPoint.text = @"3";
+    starPoint.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:12.0];
+    starPoint.textColor = RGBA(110, 114, 115, 1);
+    [self.navigationController.navigationBar addSubview:starPoint];
+    
+    UILabel *tabbarPoint = [[UILabel alloc] initWithFrame:CGRectMake(170, -15, 20, 20)];
+    tabbarPoint.backgroundColor = [UIColor clearColor];
+    tabbarPoint.shadowColor = [UIColor whiteColor];
+    tabbarPoint.shadowOffset = CGSizeMake(0, 1);
+    tabbarPoint.text = @"3";
+    tabbarPoint.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:12.0];
+    tabbarPoint.textColor = RGBA(110, 114, 115, 1);
+    [self.tabBarController.tabBar addSubview:tabbarPoint];
 }
 
 - (void)backBtnAction:(id)sender

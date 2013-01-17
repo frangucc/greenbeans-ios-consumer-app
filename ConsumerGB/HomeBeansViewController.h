@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "APIService.h"
 
 @interface HomeBeansViewController : UIViewController
 
