@@ -109,6 +109,23 @@
 		D3DA468B16AFA220000826DD /* enter_token@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DA468716AFA220000826DD /* enter_token@2x.png */; };
 		D3DA469016AFA33B000826DD /* take_me.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DA468E16AFA33B000826DD /* take_me.png */; };
 		D3DA469116AFA33B000826DD /* take_me@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DA468F16AFA33B000826DD /* take_me@2x.png */; };
+		D3DA46D516AFC72C000826DD /* connect_facebook_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DA46CB16AFC72C000826DD /* connect_facebook_btn.png */; };
+		D3DA46D616AFC72C000826DD /* connect_facebook_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DA46CC16AFC72C000826DD /* connect_facebook_btn@2x.png */; };
+		D3DA46D716AFC72C000826DD /* create_account_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DA46CD16AFC72C000826DD /* create_account_btn.png */; };
+		D3DA46D816AFC72C000826DD /* create_account_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DA46CE16AFC72C000826DD /* create_account_btn@2x.png */; };
+		D3DA46DB16AFC72C000826DD /* signup_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DA46D116AFC72C000826DD /* signup_bg.png */; };
+		D3DA46DC16AFC72C000826DD /* signup_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DA46D216AFC72C000826DD /* signup_bg@2x.png */; };
+		D3DA46DD16AFC72C000826DD /* signup_form.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DA46D316AFC72C000826DD /* signup_form.png */; };
+		D3DA46DE16AFC72C000826DD /* signup_form@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DA46D416AFC72C000826DD /* signup_form@2x.png */; };
+		D3DA46E116AFC754000826DD /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3DA46E016AFC754000826DD /* SignupViewController.m */; };
+		D3DA46E416AFC9CF000826DD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3DA46E316AFC9CF000826DD /* LoginViewController.m */; };
+		D3DA46EB16AFCDD9000826DD /* create_account_label.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DA46E916AFCDD9000826DD /* create_account_label.png */; };
+		D3DA46EC16AFCDD9000826DD /* create_account_label@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DA46EA16AFCDD9000826DD /* create_account_label@2x.png */; };
+		D3DA46FC16AFDAD6000826DD /* sign_in_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DA46FA16AFDAD6000826DD /* sign_in_btn.png */; };
+		D3DA46FD16AFDAD6000826DD /* sign_in_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DA46FB16AFDAD6000826DD /* sign_in_btn@2x.png */; };
+		D3DA470216AFDF5E000826DD /* Icon in Resources */ = {isa = PBXBuildFile; fileRef = D3DA46FF16AFDF5E000826DD /* Icon */; };
+		D3DA470316AFDF5E000826DD /* signin_to_home_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DA470016AFDF5E000826DD /* signin_to_home_btn.png */; };
+		D3DA470416AFDF5E000826DD /* signin_to_home_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DA470116AFDF5E000826DD /* signin_to_home_btn@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -250,6 +267,25 @@
 		D3DA468716AFA220000826DD /* enter_token@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "enter_token@2x.png"; sourceTree = "<group>"; };
 		D3DA468E16AFA33B000826DD /* take_me.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = take_me.png; sourceTree = "<group>"; };
 		D3DA468F16AFA33B000826DD /* take_me@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "take_me@2x.png"; sourceTree = "<group>"; };
+		D3DA46CB16AFC72C000826DD /* connect_facebook_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = connect_facebook_btn.png; sourceTree = "<group>"; };
+		D3DA46CC16AFC72C000826DD /* connect_facebook_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connect_facebook_btn@2x.png"; sourceTree = "<group>"; };
+		D3DA46CD16AFC72C000826DD /* create_account_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = create_account_btn.png; sourceTree = "<group>"; };
+		D3DA46CE16AFC72C000826DD /* create_account_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "create_account_btn@2x.png"; sourceTree = "<group>"; };
+		D3DA46D116AFC72C000826DD /* signup_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signup_bg.png; sourceTree = "<group>"; };
+		D3DA46D216AFC72C000826DD /* signup_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signup_bg@2x.png"; sourceTree = "<group>"; };
+		D3DA46D316AFC72C000826DD /* signup_form.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signup_form.png; sourceTree = "<group>"; };
+		D3DA46D416AFC72C000826DD /* signup_form@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signup_form@2x.png"; sourceTree = "<group>"; };
+		D3DA46DF16AFC754000826DD /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
+		D3DA46E016AFC754000826DD /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
+		D3DA46E216AFC9CF000826DD /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		D3DA46E316AFC9CF000826DD /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		D3DA46E916AFCDD9000826DD /* create_account_label.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = create_account_label.png; sourceTree = "<group>"; };
+		D3DA46EA16AFCDD9000826DD /* create_account_label@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "create_account_label@2x.png"; sourceTree = "<group>"; };
+		D3DA46FA16AFDAD6000826DD /* sign_in_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sign_in_btn.png; sourceTree = "<group>"; };
+		D3DA46FB16AFDAD6000826DD /* sign_in_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sign_in_btn@2x.png"; sourceTree = "<group>"; };
+		D3DA46FF16AFDF5E000826DD /* Icon */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Icon"; sourceTree = "<group>"; };
+		D3DA470016AFDF5E000826DD /* signin_to_home_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signin_to_home_btn.png; sourceTree = "<group>"; };
+		D3DA470116AFDF5E000826DD /* signin_to_home_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signin_to_home_btn@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -465,6 +501,10 @@
 				D399FED416A3BCCF00065F17 /* ViewController.m */,
 				D3682F7316A50FE700B60B57 /* ClaimBeansViewController.h */,
 				D3682F7416A50FE700B60B57 /* ClaimBeansViewController.m */,
+				D3DA46DF16AFC754000826DD /* SignupViewController.h */,
+				D3DA46E016AFC754000826DD /* SignupViewController.m */,
+				D3DA46E216AFC9CF000826DD /* LoginViewController.h */,
+				D3DA46E316AFC9CF000826DD /* LoginViewController.m */,
 				D3010E9A16A6B92E004FF021 /* BeansTabBarController.h */,
 				D3010E9B16A6B92E004FF021 /* BeansTabBarController.m */,
 				D3010E4F16A66697004FF021 /* HomeBeansViewController.h */,
@@ -492,6 +532,8 @@
 		D399FEDB16A3C76800065F17 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D3DA46FE16AFDF5E000826DD /* login */,
+				D3DA46CA16AFC72C000826DD /* signin */,
 				D3DA467E16AF9F86000826DD /* common */,
 				D3010E4916A66538004FF021 /* homeforbeans */,
 				D3682F6116A50E7200B60B57 /* claimbeans */,
@@ -524,6 +566,35 @@
 				D3DA468016AF9F86000826DD /* greenbeans_bg@2x.png */,
 			);
 			path = common;
+			sourceTree = "<group>";
+		};
+		D3DA46CA16AFC72C000826DD /* signin */ = {
+			isa = PBXGroup;
+			children = (
+				D3DA46FA16AFDAD6000826DD /* sign_in_btn.png */,
+				D3DA46FB16AFDAD6000826DD /* sign_in_btn@2x.png */,
+				D3DA46E916AFCDD9000826DD /* create_account_label.png */,
+				D3DA46EA16AFCDD9000826DD /* create_account_label@2x.png */,
+				D3DA46CB16AFC72C000826DD /* connect_facebook_btn.png */,
+				D3DA46CC16AFC72C000826DD /* connect_facebook_btn@2x.png */,
+				D3DA46CD16AFC72C000826DD /* create_account_btn.png */,
+				D3DA46CE16AFC72C000826DD /* create_account_btn@2x.png */,
+				D3DA46D116AFC72C000826DD /* signup_bg.png */,
+				D3DA46D216AFC72C000826DD /* signup_bg@2x.png */,
+				D3DA46D316AFC72C000826DD /* signup_form.png */,
+				D3DA46D416AFC72C000826DD /* signup_form@2x.png */,
+			);
+			path = signin;
+			sourceTree = "<group>";
+		};
+		D3DA46FE16AFDF5E000826DD /* login */ = {
+			isa = PBXGroup;
+			children = (
+				D3DA46FF16AFDF5E000826DD /* Icon */,
+				D3DA470016AFDF5E000826DD /* signin_to_home_btn.png */,
+				D3DA470116AFDF5E000826DD /* signin_to_home_btn@2x.png */,
+			);
+			path = login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -643,6 +714,21 @@
 				D3DA468B16AFA220000826DD /* enter_token@2x.png in Resources */,
 				D3DA469016AFA33B000826DD /* take_me.png in Resources */,
 				D3DA469116AFA33B000826DD /* take_me@2x.png in Resources */,
+				D3DA46D516AFC72C000826DD /* connect_facebook_btn.png in Resources */,
+				D3DA46D616AFC72C000826DD /* connect_facebook_btn@2x.png in Resources */,
+				D3DA46D716AFC72C000826DD /* create_account_btn.png in Resources */,
+				D3DA46D816AFC72C000826DD /* create_account_btn@2x.png in Resources */,
+				D3DA46DB16AFC72C000826DD /* signup_bg.png in Resources */,
+				D3DA46DC16AFC72C000826DD /* signup_bg@2x.png in Resources */,
+				D3DA46DD16AFC72C000826DD /* signup_form.png in Resources */,
+				D3DA46DE16AFC72C000826DD /* signup_form@2x.png in Resources */,
+				D3DA46EB16AFCDD9000826DD /* create_account_label.png in Resources */,
+				D3DA46EC16AFCDD9000826DD /* create_account_label@2x.png in Resources */,
+				D3DA46FC16AFDAD6000826DD /* sign_in_btn.png in Resources */,
+				D3DA46FD16AFDAD6000826DD /* sign_in_btn@2x.png in Resources */,
+				D3DA470216AFDF5E000826DD /* Icon in Resources */,
+				D3DA470316AFDF5E000826DD /* signin_to_home_btn.png in Resources */,
+				D3DA470416AFDF5E000826DD /* signin_to_home_btn@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,6 +768,8 @@
 				D3682FF216A53F3100B60B57 /* APIService.m in Sources */,
 				D3010E5116A66697004FF021 /* HomeBeansViewController.m in Sources */,
 				D3010E9C16A6B92E004FF021 /* BeansTabBarController.m in Sources */,
+				D3DA46E116AFC754000826DD /* SignupViewController.m in Sources */,
+				D3DA46E416AFC9CF000826DD /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -75,6 +75,22 @@
 }
 
 
+- (IBAction)myBeansAction:(id)sender
+{
+    if ([self isUserLoggedIn]) {
+        [self performSegueWithIdentifier:@"myBeansToHomeBeansSegue" sender:self];
+    } else {
+        [self performSegueWithIdentifier:@"myBeansToSignupSegue" sender:self];
+    }
+}
+
+
+- (BOOL)isUserLoggedIn
+{
+    return NO;
+}
+
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];

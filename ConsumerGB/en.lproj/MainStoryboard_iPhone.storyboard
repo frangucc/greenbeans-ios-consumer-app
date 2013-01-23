@@ -78,7 +78,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-88" y="183"/>
+            <point key="canvasLocation" x="-855" y="188"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="zRq-Ev-ofh">
@@ -327,7 +327,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6oz-Kh-ZfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="674" y="182"/>
+            <point key="canvasLocation" x="778" y="188"/>
         </scene>
         <!--Claim Beans View Controller-->
         <scene sceneID="GNf-WG-udx">
@@ -387,7 +387,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Urc-UE-yfz" kind="push" identifier="myBeansToHomeBeansSegue" id="Mkz-sd-3LB"/>
+                                    <action selector="myBeansAction:" destination="TLT-ak-ZwB" eventType="touchUpInside" id="xbz-5c-Wlp"/>
                                 </connections>
                             </button>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="claim_beans_err_msg.png" id="MTc-Yv-cIu">
@@ -414,11 +414,147 @@
                         <outlet property="errMsg" destination="MTc-Yv-cIu" id="8jb-0p-v1I"/>
                         <outlet property="tokenInput" destination="VU6-YW-0Q4" id="KM5-0X-elq"/>
                         <segue destination="Urc-UE-yfz" kind="push" identifier="toHomeBeansSegue" id="qjM-y0-ODY"/>
+                        <segue destination="Zl8-PS-VkO" kind="push" identifier="myBeansToSignupSegue" id="t95-Er-YSw"/>
+                        <segue destination="Urc-UE-yfz" kind="push" identifier="myBeansToHomeBeansSegue" id="4mG-SC-2xl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QWh-gK-KgX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="299" y="182"/>
+            <point key="canvasLocation" x="-414" y="188"/>
+        </scene>
+        <!--Signup View Controller-->
+        <scene sceneID="AoY-Pb-9uQ">
+            <objects>
+                <viewController id="Zl8-PS-VkO" customClass="SignupViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qyR-YY-Xdd" customClass="UIControl">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="greenbeans_bg.png" id="qst-Oe-Wjw">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="NyZ-zT-ywC">
+                                <rect key="frame" x="69" y="86" width="183" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="connect_facebook_btn.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="create_account_label.png" id="tFQ-hg-W4k">
+                                <rect key="frame" x="86" y="133" width="148" height="13"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="signup_form.png" id="McB-qo-VP1">
+                                <rect key="frame" x="24" y="160" width="272" height="111"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1NF-Dr-kCH">
+                                <rect key="frame" x="23" y="279" width="274" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="create_account_btn.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OCW-fo-KVN">
+                                <rect key="frame" x="25" y="350" width="270" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="sign_in_btn.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" id="82K-nX-ORl">
+                                <rect key="frame" x="127" y="235" width="162" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="hideKeyboard:" destination="Zl8-PS-VkO" eventType="editingDidEndOnExit" id="dPw-iH-A1R"/>
+                                    <outlet property="delegate" destination="Zl8-PS-VkO" id="oi6-sg-Xer"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" id="goK-g0-aSo">
+                                <rect key="frame" x="127" y="201" width="162" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="hideKeyboard:" destination="Zl8-PS-VkO" eventType="editingDidEndOnExit" id="BKr-Nu-O1Y"/>
+                                    <outlet property="delegate" destination="Zl8-PS-VkO" id="KY5-a8-oGy"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" id="9Ts-IF-nWC">
+                                <rect key="frame" x="127" y="164" width="162" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="hideKeyboard:" destination="Zl8-PS-VkO" eventType="editingDidEndOnExit" id="Wzz-3c-TC9"/>
+                                    <outlet property="delegate" destination="Zl8-PS-VkO" id="aGu-GM-VLj"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <connections>
+                            <action selector="hideKeyboardTouchDown:" destination="Zl8-PS-VkO" eventType="touchDown" id="TLb-jr-xWo"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="emailInput" destination="goK-g0-aSo" id="wfj-Hu-nUy"/>
+                        <outlet property="nameInput" destination="9Ts-IF-nWC" id="IEk-RS-GMn"/>
+                        <outlet property="passInput" destination="82K-nX-ORl" id="DlG-SD-UYr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VlZ-1T-05k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7" y="-201"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="hXV-fN-tCg">
+            <objects>
+                <viewController id="Lr2-sj-xcT" customClass="LoginViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2KC-a3-84S">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="greenbeans_bg.png" id="3UV-s3-cP3">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Trx-OI-CKx">
+                                <rect key="frame" x="23" y="275" width="274" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="signin_to_home_btn.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OvF-py-roL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="374" y="-202"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hnk-71-xPL">
@@ -437,7 +573,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HP3-oS-YxR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-461" y="183"/>
+            <point key="canvasLocation" x="-1232" y="188"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fmZ-zl-2vv">
@@ -472,6 +608,9 @@
         <image name="claim_beans_btn.png" width="274" height="42"/>
         <image name="claim_beans_err_msg.png" width="271" height="26"/>
         <image name="comments_btn.png" width="41" height="26"/>
+        <image name="connect_facebook_btn.png" width="183" height="30"/>
+        <image name="create_account_btn.png" width="274" height="42"/>
+        <image name="create_account_label.png" width="148" height="13"/>
         <image name="enter_token.png" width="169" height="13"/>
         <image name="greenbeans_bg.png" width="320" height="548"/>
         <image name="home_beans_bg.png" width="320" height="480"/>
@@ -486,6 +625,9 @@
         <image name="more_btn.png" width="26" height="26"/>
         <image name="my_beans_btn.png" width="143" height="42"/>
         <image name="play_beans_btn.png" width="281" height="50"/>
+        <image name="sign_in_btn.png" width="270" height="73"/>
+        <image name="signin_to_home_btn.png" width="274" height="42"/>
+        <image name="signup_form.png" width="272" height="111"/>
         <image name="take_me.png" width="68" height="10"/>
         <image name="token_input.png" width="272" height="39"/>
         <image name="top_shadow.png" width="320" height="44"/>
@@ -501,6 +643,7 @@
                 <relationship kind="action" name="claimBeansAction:"/>
                 <relationship kind="action" name="hideKeyboard:"/>
                 <relationship kind="action" name="hideKeyboardTouchDown:"/>
+                <relationship kind="action" name="myBeansAction:"/>
                 <relationship kind="outlet" name="claimBeansBlockView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="errMsg" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="tokenInput" candidateClass="UITextField"/>
@@ -508,6 +651,19 @@
         </class>
         <class className="HomeBeansViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeBeansViewController.h"/>
+        </class>
+        <class className="LoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
+        </class>
+        <class className="SignupViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SignupViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="hideKeyboard:"/>
+                <relationship kind="action" name="hideKeyboardTouchDown:"/>
+                <relationship kind="outlet" name="emailInput" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="nameInput" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="passInput" candidateClass="UITextField"/>
+            </relationships>
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
@@ -522,6 +678,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="qjM-y0-ODY"/>
+        <segue reference="4mG-SC-2xl"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -18,5 +18,6 @@
 - (IBAction)hideKeyboard:(id)sender;
 - (IBAction)hideKeyboardTouchDown:(id)sender;
 - (IBAction)claimBeansAction:(id)sender;
+- (IBAction)myBeansAction:(id)sender;
 
 @end
