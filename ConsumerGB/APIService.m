@@ -143,4 +143,26 @@ static APIService * service;
 	NSLog(@"Queue finished");
 }
 
+
+
+/**
+ * GET/SET LOGGED-IN USER
+ */
+
+- (NSMutableDictionary*)getUser
+{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    NSData *data = [prefs objectForKey:@"currentLoggedinUser"];
+    NSMutableDictionary *user = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    return user;
+}
+
+- (void)setUser:(NSMutableDictionary*)user
+{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:user];
+    [prefs setObject:data forKey:@"currentLoggedinUser"];
+}
+
+
 @end

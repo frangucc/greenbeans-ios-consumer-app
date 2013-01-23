@@ -85,6 +85,14 @@
 - (void)loginSuccess:(NSNotification *)notification
 {
     NSLog(@" loginSuccess: %@", notification.object);
+    if (200 == [[notification.object objectForKey:@"status"] intValue]) {
+        [[APIService getService] setUser:[notification.object objectForKey:@"user"]];
+    }
+}
+
+- (void)loginFailure:(NSNotification *)notification
+{
+    NSLog(@" loginFailureß");
 }
 
 

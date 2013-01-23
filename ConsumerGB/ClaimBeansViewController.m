@@ -87,6 +87,12 @@
 
 - (BOOL)isUserLoggedIn
 {
+    NSMutableDictionary *currentLoggedinUser = [[APIService getService] getUser];
+    NSLog(@" saved logged-in user: %@", currentLoggedinUser);
+
+    if (currentLoggedinUser && [[currentLoggedinUser objectForKey:@"auth_token"] length] > 0) {
+        return YES;
+    }
     return NO;
 }
 

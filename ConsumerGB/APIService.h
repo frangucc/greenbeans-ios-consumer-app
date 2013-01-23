@@ -29,5 +29,6 @@
 + (id)getService;
 - (void)checkBeanCodeValid:(NSString*)beanCode;
 - (void)login:(NSMutableDictionary*)user;
-
+- (NSMutableDictionary*)getUser;
+- (void)setUser:(NSMutableDictionary*)user;
 @end
