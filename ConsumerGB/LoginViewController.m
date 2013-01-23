@@ -2,7 +2,7 @@
 //  LoginViewController.m
 //  ConsumerGB
 //
-//  Created by Anh Viet on 1/23/13.
+//  Created by Srikanth on 1/23/13.
 //  Copyright (c) 2013 GreenBeans. All rights reserved.
 //
 
@@ -14,19 +14,12 @@
 
 @implementation LoginViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginSuccess:) name:LOGIN_SUCCESS_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginFailure:) name:CHECK_BEAN_CODE_FAILURE_NOTIFICATION object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,6 +69,22 @@
     }
     
     return YES;
+}
+
+
+
+- (IBAction)loginAction:(id)sender
+{
+    [self hideKeyboardTouchDown:nil];
+    
+    NSMutableDictionary *user = [[NSMutableDictionary alloc] initWithObjectsAndKeys:_emailInput.text, @"email", _passInput.text, @"password", nil];
+    [[APIService getService] login:user];
+}
+
+
+- (void)loginSuccess:(NSNotification *)notification
+{
+    NSLog(@" loginSuccess: %@", notification.object);
 }
 
 

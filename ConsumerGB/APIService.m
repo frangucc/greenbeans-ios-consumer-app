@@ -31,10 +31,13 @@ static APIService * service;
     return self;
 }
 
-
+/**
+ * CHECK BEAN CODE
+ */
 - (void)checkBeanCodeValid:(NSString*)beanCode
 {
     NSLog(@"APIService - checkBeanCodeValid: %@", beanCode);
+    
     [self setNetworkQueue:[ASINetworkQueue queue]];
 	[[self networkQueue] setDelegate:self];
     
@@ -60,10 +63,13 @@ static APIService * service;
 - (void)checkBeanCodeFinished:(ASIHTTPRequest *)request
 {
 	// Handle success
-    NSString *theJSON = [request responseString];
-    NSLog(@"  checkBeanCodeFinished: %@", theJSON);
-    [[NSNotificationCenter defaultCenter] postNotificationName:CHECK_BEAN_CODE_SUCCESS_NOTIFICATION object:[theJSON JSONValue]];
-
+    NSString *theJsonStr = [request responseString];
+//    NSLog(@"  checkBeanCodeFinished: %@", theJsonStr);
+    if ([theJsonStr JSONValue] != [NSNull null]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:CHECK_BEAN_CODE_SUCCESS_NOTIFICATION object:[theJsonStr JSONValue]];
+    } else {
+         [[NSNotificationCenter defaultCenter] postNotificationName:CHECK_BEAN_CODE_FAILURE_NOTIFICATION object:nil];
+    }
 }
 
 - (void)checkBeanCodeFailed:(ASIHTTPRequest *)request
@@ -82,5 +88,59 @@ static APIService * service;
 }
 
 
+/**
+ * LOGIN
+ */
+- (void)login:(NSMutableDictionary*)user
+{
+    NSLog(@"APIService - login: %@", user);
+
+    [self setNetworkQueue:[ASINetworkQueue queue]];
+	[[self networkQueue] setDelegate:self];
+    
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:API_LOGIN]];
+    
+    [request setDelegate:self];
+	[request setDidFinishSelector:@selector(loginFinished:)];
+	[request setDidFailSelector:@selector(loginFailed:)];
+    [request addRequestHeader:@"Content-Type" value:@"application/json"];
+    [request addRequestHeader:@"Accept" value:@"application/json"];
+    [request setRequestMethod:@"POST"];
+    [request setPostValue:[user objectForKey:@"email"] forKey:@"user[email]"];
+    [request setPostValue:[user objectForKey:@"password"] forKey:@"user[password]"];
+    [request setTimeOutSeconds:10];
+    
+    [[self networkQueue] addOperation:request];
+    
+    [[self networkQueue] setQueueDidFinishSelector:@selector(loginQueueFinished:)];
+    
+    [[self networkQueue] go];
+}
+
+- (void)loginFinished:(ASIHTTPRequest *)request
+{
+    NSString *theJsonStr = [request responseString];
+//    NSLog(@"loginFinished: %@", theJsonStr);
+    if ([theJsonStr JSONValue] != [NSNull null]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:LOGIN_SUCCESS_NOTIFICATION object:[theJsonStr JSONValue]];
+    } else {
+        [[NSNotificationCenter defaultCenter] postNotificationName:LOGIN_FAILURE_NOTIFICATION object:nil];
+    }
+}
+
+- (void)loginFailed:(ASIHTTPRequest *)request
+{
+    NSLog(@"loginFailed");
+    [[NSNotificationCenter defaultCenter] postNotificationName:LOGIN_FAILURE_NOTIFICATION object:nil];
+}
+
+- (void)loginQueueFinished:(ASINetworkQueue *)queue
+{
+	// Could release the queue here
+	if ([[self networkQueue] requestsCount] == 0) {
+		[self setNetworkQueue:nil];
+	}
+	NSLog(@"Queue finished");
+}
 
 @end

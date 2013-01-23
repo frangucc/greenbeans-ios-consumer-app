@@ -485,7 +485,7 @@
                                 <rect key="frame" x="127" y="235" width="162" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
                                     <action selector="hideKeyboard:" destination="Zl8-PS-VkO" eventType="editingDidEndOnExit" id="dPw-iH-A1R"/>
                                     <outlet property="delegate" destination="Zl8-PS-VkO" id="oi6-sg-Xer"/>
@@ -551,6 +551,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="loginAction:" destination="Lr2-sj-xcT" eventType="touchUpInside" id="eBp-9v-kmj"/>
                                     <segue destination="Urc-UE-yfz" kind="push" id="CQ6-ZB-wAN"/>
                                 </connections>
                             </button>
@@ -572,7 +573,7 @@
                                 <rect key="frame" x="127" y="196" width="162" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
                                     <action selector="hideKeyboard:" destination="Lr2-sj-xcT" eventType="editingDidEndOnExit" id="R3d-t2-aqR"/>
                                     <outlet property="delegate" destination="Lr2-sj-xcT" id="Exo-7S-htq"/>
@@ -696,6 +697,7 @@
             <relationships>
                 <relationship kind="action" name="hideKeyboard:"/>
                 <relationship kind="action" name="hideKeyboardTouchDown:"/>
+                <relationship kind="action" name="loginAction:"/>
                 <relationship kind="outlet" name="emailInput" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="passInput" candidateClass="UITextField"/>
             </relationships>

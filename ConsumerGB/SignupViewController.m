@@ -2,7 +2,7 @@
 //  SignupViewController.m
 //  ConsumerGB
 //
-//  Created by Anh Viet on 1/23/13.
+//  Created by Srikanth on 1/23/13.
 //  Copyright (c) 2013 GreenBeans. All rights reserved.
 //
 
@@ -13,15 +13,6 @@
 @end
 
 @implementation SignupViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
