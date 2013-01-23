@@ -477,6 +477,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Lr2-sj-xcT" kind="push" id="ujV-36-ZYI"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" id="82K-nX-ORl">
                                 <rect key="frame" x="127" y="235" width="162" height="30"/>
@@ -547,10 +550,14 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Urc-UE-yfz" kind="push" id="CQ6-ZB-wAN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="0y0-Uv-Biy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OvF-py-roL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -678,6 +685,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="4mG-SC-2xl"/>
+        <segue reference="CQ6-ZB-wAN"/>
     </inferredMetricsTieBreakers>
 </document>

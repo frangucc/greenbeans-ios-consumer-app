@@ -38,6 +38,13 @@
 - (IBAction)hideKeyboard:(id)sender
 {
     [sender resignFirstResponder];
+    
+    if (self.view.frame.origin.y < 0.0) {
+        // move signup view down
+        [UIView animateWithDuration:0.2 animations:^ {
+            self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+        }];
+    }
 }
 
 - (IBAction)hideKeyboardTouchDown:(id)sender
@@ -56,7 +63,6 @@
             self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
         }];
     }
-
 }
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
