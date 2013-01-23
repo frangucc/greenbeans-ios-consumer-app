@@ -531,7 +531,7 @@
         <scene sceneID="hXV-fN-tCg">
             <objects>
                 <viewController id="Lr2-sj-xcT" customClass="LoginViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="2KC-a3-84S">
+                    <view key="view" contentMode="scaleToFill" id="2KC-a3-84S" customClass="UIControl">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -540,7 +540,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Trx-OI-CKx">
-                                <rect key="frame" x="23" y="275" width="274" height="42"/>
+                                <rect key="frame" x="23" y="240" width="274" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="signin_to_home_btn.png">
@@ -554,10 +554,41 @@
                                     <segue destination="Urc-UE-yfz" kind="push" id="CQ6-ZB-wAN"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="signin_form.png" id="1UT-Ch-yER">
+                                <rect key="frame" x="24" y="160" width="272" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" id="7M0-Fp-OWD">
+                                <rect key="frame" x="127" y="163" width="162" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="hideKeyboard:" destination="Lr2-sj-xcT" eventType="editingDidEndOnExit" id="dWb-jZ-UBh"/>
+                                    <outlet property="delegate" destination="Lr2-sj-xcT" id="G7k-cf-xvJ"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" id="LG1-KD-USD">
+                                <rect key="frame" x="127" y="196" width="162" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="hideKeyboard:" destination="Lr2-sj-xcT" eventType="editingDidEndOnExit" id="R3d-t2-aqR"/>
+                                    <outlet property="delegate" destination="Lr2-sj-xcT" id="Exo-7S-htq"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <connections>
+                            <action selector="hideKeyboardTouchDown:" destination="Lr2-sj-xcT" eventType="touchDown" id="Mfj-1u-MoF"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="0y0-Uv-Biy"/>
+                    <connections>
+                        <outlet property="emailInput" destination="7M0-Fp-OWD" id="07u-cY-a0U"/>
+                        <outlet property="passInput" destination="LG1-KD-USD" id="vut-fe-kSp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OvF-py-roL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -633,6 +664,7 @@
         <image name="my_beans_btn.png" width="143" height="42"/>
         <image name="play_beans_btn.png" width="281" height="50"/>
         <image name="sign_in_btn.png" width="270" height="73"/>
+        <image name="signin_form.png" width="272" height="72"/>
         <image name="signin_to_home_btn.png" width="274" height="42"/>
         <image name="signup_form.png" width="272" height="111"/>
         <image name="take_me.png" width="68" height="10"/>
@@ -661,6 +693,12 @@
         </class>
         <class className="LoginViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="hideKeyboard:"/>
+                <relationship kind="action" name="hideKeyboardTouchDown:"/>
+                <relationship kind="outlet" name="emailInput" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="passInput" candidateClass="UITextField"/>
+            </relationships>
         </class>
         <class className="SignupViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SignupViewController.h"/>

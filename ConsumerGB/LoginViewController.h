@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController <UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *emailInput;
+@property (weak, nonatomic) IBOutlet UITextField *passInput;
+
+- (IBAction)hideKeyboard:(id)sender;
+- (IBAction)hideKeyboardTouchDown:(id)sender;
 
 @end
