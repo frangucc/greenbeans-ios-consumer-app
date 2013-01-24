@@ -76,6 +76,9 @@
 {
     [self hideKeyboardTouchDown:nil];
     
+    // MBProgressHUD start
+    [[APIService getService] startHUD:self.view];
+
     NSMutableDictionary *user = [[NSMutableDictionary alloc] initWithObjectsAndKeys:_emailInput.text, @"email", _passInput.text, @"password", nil];
     [[APIService getService] login:user];
 }
@@ -84,6 +87,10 @@
 - (void)loginSuccess:(NSNotification *)notification
 {
     NSLog(@" loginSuccess: %@", notification.object);
+    
+    // MBProgressHUD stop
+    [[APIService getService] stopHUD:self.view];
+
     if (200 == [[notification.object objectForKey:@"status"] intValue]) {
         [[APIService getService] setUser:[notification.object objectForKey:@"user"]];
         [self performSegueWithIdentifier:@"loginSuccessSegue" sender:self];
@@ -100,6 +107,10 @@
 - (void)loginFailure:(NSNotification *)notification
 {
     NSLog(@" loginFailure");
+    
+    // MBProgressHUD stop
+    [[APIService getService] stopHUD:self.view];
+
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"Please try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
 }

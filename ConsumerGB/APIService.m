@@ -203,6 +203,21 @@ static APIService * service;
 }
 
 
+#pragma mark - HUD progress
+
+- (void)startHUD:(UIView*)theView
+{
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:theView animated:YES];
+    hud.color = RGBA(89, 176, 64, 0.8);
+}
+
+
+- (void)stopHUD:(UIView*)theView
+{
+    [MBProgressHUD hideHUDForView:theView animated:YES];
+}
+
+
 /**
  * GET/SET LOGGED-IN USER
  */

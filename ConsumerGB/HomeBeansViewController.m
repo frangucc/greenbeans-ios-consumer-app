@@ -100,6 +100,10 @@
 - (void)prepareData
 {
     NSLog(@"HomeBeansViewController - prepareData");
+    
+    // MBProgressHUD start
+    [[APIService getService] startHUD:self.view];
+    
     [[APIService getService] getConsumerBeans];
 }
 
@@ -111,11 +115,18 @@
     [_activeBeansVC.collectionView reloadData];
     // Set the label
     _youHaveBeansLabel.text = [NSString stringWithFormat:@"You have %d active beans", [_activeBeansVC.beans count]];
+    
+    // MBProgressHUD stop
+    [[APIService getService] stopHUD:self.view];
 }
 
 - (void)getConsumerBeansFailure:(NSNotification *)notification
 {
     NSLog(@" getConsumerBeansFailure");
+    
+    // MBProgressHUD stop
+    [[APIService getService] stopHUD:self.view];
+
     if ([notification.object objectForKey:@"error"]) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Authentication Failed" message:[notification.object objectForKey:@"error"] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];

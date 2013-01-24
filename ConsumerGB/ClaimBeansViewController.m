@@ -44,6 +44,9 @@
 {
     [_tokenInput resignFirstResponder];
     
+    // MBProgressHUD start
+    [[APIService getService] startHUD:self.view];
+
     // Check bean code
     [[APIService getService] checkBeanCodeValid:_tokenInput.text];
 }
@@ -52,6 +55,9 @@
 {
     NSLog(@" checkBeanCodesSuccess: %@", notification.object);
     
+    // MBProgressHUD stop
+    [[APIService getService] stopHUD:self.view];
+
     BOOL isBeanCodeValid = [[notification.object valueForKey:@"valid"] intValue];
 
     if (isBeanCodeValid == YES) {
@@ -70,6 +76,10 @@
 - (void)checkBeanCodesFailure:(NSNotification *)notification
 {
     NSLog(@" checkBeanCodesFailure");
+    
+    // MBProgressHUD stop
+    [[APIService getService] stopHUD:self.view];
+
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Checking Bean Code Failed" message:@"Please try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
 }
