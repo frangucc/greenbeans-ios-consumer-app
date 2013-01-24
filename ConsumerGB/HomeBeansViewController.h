@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "APIService.h"
 
-@interface HomeBeansViewController : UIViewController
+@class ActiveBeansCollectionViewController;
+@class BeansTabBarController;
+
+@interface HomeBeansViewController : UIViewController <UIAlertViewDelegate>
+
+@property (strong, nonatomic) ActiveBeansCollectionViewController *activeBeansVC;
 
 @end

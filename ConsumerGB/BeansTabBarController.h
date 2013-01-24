@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "APIService.h"
 
 @interface BeansTabBarController : UITabBarController
+
+- (void)doLogout;
 
 @end

@@ -127,6 +127,7 @@
 		D3DA46FD16AFDAD6000826DD /* sign_in_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DA46FB16AFDAD6000826DD /* sign_in_btn@2x.png */; };
 		D3DA470316AFDF5E000826DD /* signin_to_home_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DA470016AFDF5E000826DD /* signin_to_home_btn.png */; };
 		D3DA470416AFDF5E000826DD /* signin_to_home_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DA470116AFDF5E000826DD /* signin_to_home_btn@2x.png */; };
+		D3EFC6B516B0EFCF008609D7 /* ActiveBeansCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFC6B416B0EFCF008609D7 /* ActiveBeansCollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -288,6 +289,8 @@
 		D3DA46FB16AFDAD6000826DD /* sign_in_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sign_in_btn@2x.png"; sourceTree = "<group>"; };
 		D3DA470016AFDF5E000826DD /* signin_to_home_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signin_to_home_btn.png; sourceTree = "<group>"; };
 		D3DA470116AFDF5E000826DD /* signin_to_home_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signin_to_home_btn@2x.png"; sourceTree = "<group>"; };
+		D3EFC6B316B0EFCF008609D7 /* ActiveBeansCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActiveBeansCollectionViewController.h; sourceTree = "<group>"; };
+		D3EFC6B416B0EFCF008609D7 /* ActiveBeansCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActiveBeansCollectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -511,6 +514,8 @@
 				D3010E9B16A6B92E004FF021 /* BeansTabBarController.m */,
 				D3010E4F16A66697004FF021 /* HomeBeansViewController.h */,
 				D3010E5016A66697004FF021 /* HomeBeansViewController.m */,
+				D3EFC6B316B0EFCF008609D7 /* ActiveBeansCollectionViewController.h */,
+				D3EFC6B416B0EFCF008609D7 /* ActiveBeansCollectionViewController.m */,
 				D399FEDB16A3C76800065F17 /* Resources */,
 				D399FEBC16A3BCCF00065F17 /* Supporting Files */,
 			);
@@ -774,6 +779,7 @@
 				D3010E9C16A6B92E004FF021 /* BeansTabBarController.m in Sources */,
 				D3DA46E116AFC754000826DD /* SignupViewController.m in Sources */,
 				D3DA46E416AFC9CF000826DD /* LoginViewController.m in Sources */,
+				D3EFC6B516B0EFCF008609D7 /* ActiveBeansCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

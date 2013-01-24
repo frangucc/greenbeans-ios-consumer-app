@@ -7,6 +7,8 @@
 //
 
 #import "HomeBeansViewController.h"
+#import "ActiveBeansCollectionViewController.h"
+#import "BeansTabBarController.h"
 
 @interface HomeBeansViewController ()
 
@@ -18,10 +20,15 @@
 {
     [super viewDidLoad];
     
+    // Init
+    _activeBeansVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ActiveBeansCollectionVC"];
+    [self.view addSubview:_activeBeansVC.view];
+    [self.view sendSubviewToBack:_activeBeansVC.view];
+
     // Notifications
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getConsumerBeansSuccess:) name:GET_CONSUMER_BEANS_SUCCESS_NOTIFICATION object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getConsumerBeansFailure:) name:GET_CONSUMER_BEANS_FAILURE_NOTIFICATION object:nil];
-
+    
     // Customize Back button
     UIButton *backBtn =  [UIButton buttonWithType:UIButtonTypeCustom];
     [backBtn setBackgroundImage:[UIImage imageNamed:@"back_btn.png"] forState:UIControlStateNormal];
@@ -101,6 +108,19 @@
 - (void)getConsumerBeansFailure:(NSNotification *)notification
 {
     NSLog(@" getConsumerBeansFailure");
+    if ([notification.object objectForKey:@"error"]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Authentication Failed" message:[notification.object objectForKey:@"error"] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+	NSString *tappedBtn = [alertView buttonTitleAtIndex:buttonIndex];
+    NSLog(@"  tappedBtn: %@", tappedBtn);
+    // Do logout
+    BeansTabBarController *beansTabBar = (BeansTabBarController*)self.tabBarController;
+    [beansTabBar doLogout];
 }
 
 

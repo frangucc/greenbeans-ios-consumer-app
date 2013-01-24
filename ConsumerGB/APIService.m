@@ -156,6 +156,7 @@ static APIService * service;
     
     NSString *authToken = [[[APIService getService] getUser] objectForKey:@"auth_token"];
     NSString *getConsumerBeansURL = [NSString stringWithFormat:@"%@%@", API_GET_CONSUMER_BEANS, authToken];
+    NSLog(@" getConsumerBeansURL: %@", getConsumerBeansURL);
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:getConsumerBeansURL]];
     
     [request setDelegate:self];
@@ -176,7 +177,7 @@ static APIService * service;
 - (void)getConsumerBeansFinished:(ASIHTTPRequest *)request
 {
     NSString *theJsonStr = [request responseString];
-//    NSLog(@"getConsumerBeansFinished: %@", theJsonStr);
+    NSLog(@"getConsumerBeansFinished: %@", theJsonStr);
     if ([theJsonStr JSONValue] != [NSNull null]) {
         [[NSNotificationCenter defaultCenter] postNotificationName:GET_CONSUMER_BEANS_SUCCESS_NOTIFICATION object:[theJsonStr JSONValue]];
     } else {
@@ -187,8 +188,9 @@ static APIService * service;
 
 - (void)getConsumerBeansFailed:(ASIHTTPRequest *)request
 {
-    NSLog(@"getConsumerBeansFailed");
-    [[NSNotificationCenter defaultCenter] postNotificationName:GET_CONSUMER_BEANS_FAILURE_NOTIFICATION object:nil];
+    NSString *theJsonStr = [request responseString];
+    NSLog(@"getConsumerBeansFailed: %@", theJsonStr);
+    [[NSNotificationCenter defaultCenter] postNotificationName:GET_CONSUMER_BEANS_FAILURE_NOTIFICATION object:[theJsonStr JSONValue]];
 }
 
 - (void)getConsumerBeansQueueFinished:(ASINetworkQueue *)queue

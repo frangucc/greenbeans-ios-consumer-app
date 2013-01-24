@@ -49,6 +49,17 @@
     [fourthTabItem setFinishedSelectedImage:icon4 withFinishedUnselectedImage:icon4];
 }
 
+
+- (void)doLogout
+{
+    NSLog(@"BeansTabBarController - doLogout");
+    // Reset currently logged-in user, so user needs to log in again
+    [[APIService getService] setUser:[[NSMutableDictionary alloc] init]];
+    // Back to Claim Beans screen
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
