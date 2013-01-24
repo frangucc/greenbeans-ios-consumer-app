@@ -129,6 +129,9 @@
 		D3DA470416AFDF5E000826DD /* signin_to_home_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DA470116AFDF5E000826DD /* signin_to_home_btn@2x.png */; };
 		D3EFC6B516B0EFCF008609D7 /* ActiveBeansCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFC6B416B0EFCF008609D7 /* ActiveBeansCollectionViewController.m */; };
 		D3EFC6B916B1173B008609D7 /* BeanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFC6B816B1173B008609D7 /* BeanCell.m */; };
+		D3EFC6BD16B13359008609D7 /* signout_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EFC6BB16B13359008609D7 /* signout_btn.png */; };
+		D3EFC6BE16B13359008609D7 /* signout_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EFC6BC16B13359008609D7 /* signout_btn@2x.png */; };
+		D3EFC6C116B1351D008609D7 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFC6C016B1351D008609D7 /* SettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -294,6 +297,10 @@
 		D3EFC6B416B0EFCF008609D7 /* ActiveBeansCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActiveBeansCollectionViewController.m; sourceTree = "<group>"; };
 		D3EFC6B716B1173B008609D7 /* BeanCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeanCell.h; sourceTree = "<group>"; };
 		D3EFC6B816B1173B008609D7 /* BeanCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeanCell.m; sourceTree = "<group>"; };
+		D3EFC6BB16B13359008609D7 /* signout_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signout_btn.png; sourceTree = "<group>"; };
+		D3EFC6BC16B13359008609D7 /* signout_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signout_btn@2x.png"; sourceTree = "<group>"; };
+		D3EFC6BF16B1351D008609D7 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		D3EFC6C016B1351D008609D7 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -501,6 +508,8 @@
 			isa = PBXGroup;
 			children = (
 				D3682FEF16A53EE300B60B57 /* APIService */,
+				D3EFC6C316B13776008609D7 /* Home */,
+				D3EFC6C416B1378D008609D7 /* Settings */,
 				D399FEC416A3BCCF00065F17 /* AppDelegate.h */,
 				D399FEC516A3BCCF00065F17 /* AppDelegate.m */,
 				D399FECD16A3BCCF00065F17 /* MainStoryboard_iPhone.storyboard */,
@@ -515,12 +524,6 @@
 				D3DA46E316AFC9CF000826DD /* LoginViewController.m */,
 				D3010E9A16A6B92E004FF021 /* BeansTabBarController.h */,
 				D3010E9B16A6B92E004FF021 /* BeansTabBarController.m */,
-				D3010E4F16A66697004FF021 /* HomeBeansViewController.h */,
-				D3010E5016A66697004FF021 /* HomeBeansViewController.m */,
-				D3EFC6B316B0EFCF008609D7 /* ActiveBeansCollectionViewController.h */,
-				D3EFC6B416B0EFCF008609D7 /* ActiveBeansCollectionViewController.m */,
-				D3EFC6B716B1173B008609D7 /* BeanCell.h */,
-				D3EFC6B816B1173B008609D7 /* BeanCell.m */,
 				D399FEDB16A3C76800065F17 /* Resources */,
 				D399FEBC16A3BCCF00065F17 /* Supporting Files */,
 			);
@@ -544,6 +547,7 @@
 		D399FEDB16A3C76800065F17 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D3EFC6BA16B13359008609D7 /* settings */,
 				D3DA46FE16AFDF5E000826DD /* login */,
 				D3DA46CA16AFC72C000826DD /* signin */,
 				D3DA467E16AF9F86000826DD /* common */,
@@ -608,6 +612,37 @@
 				D3DA470116AFDF5E000826DD /* signin_to_home_btn@2x.png */,
 			);
 			path = login;
+			sourceTree = "<group>";
+		};
+		D3EFC6BA16B13359008609D7 /* settings */ = {
+			isa = PBXGroup;
+			children = (
+				D3EFC6BB16B13359008609D7 /* signout_btn.png */,
+				D3EFC6BC16B13359008609D7 /* signout_btn@2x.png */,
+			);
+			path = settings;
+			sourceTree = "<group>";
+		};
+		D3EFC6C316B13776008609D7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D3010E4F16A66697004FF021 /* HomeBeansViewController.h */,
+				D3010E5016A66697004FF021 /* HomeBeansViewController.m */,
+				D3EFC6B316B0EFCF008609D7 /* ActiveBeansCollectionViewController.h */,
+				D3EFC6B416B0EFCF008609D7 /* ActiveBeansCollectionViewController.m */,
+				D3EFC6B716B1173B008609D7 /* BeanCell.h */,
+				D3EFC6B816B1173B008609D7 /* BeanCell.m */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		D3EFC6C416B1378D008609D7 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D3EFC6BF16B1351D008609D7 /* SettingsViewController.h */,
+				D3EFC6C016B1351D008609D7 /* SettingsViewController.m */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -743,6 +778,8 @@
 				D3DA470416AFDF5E000826DD /* signin_to_home_btn@2x.png in Resources */,
 				7B8C549016B0260C00EC2B06 /* signin_form.png in Resources */,
 				7B8C549116B0260C00EC2B06 /* signin_form@2x.png in Resources */,
+				D3EFC6BD16B13359008609D7 /* signout_btn.png in Resources */,
+				D3EFC6BE16B13359008609D7 /* signout_btn@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -786,6 +823,7 @@
 				D3DA46E416AFC9CF000826DD /* LoginViewController.m in Sources */,
 				D3EFC6B516B0EFCF008609D7 /* ActiveBeansCollectionViewController.m in Sources */,
 				D3EFC6B916B1173B008609D7 /* BeanCell.m in Sources */,
+				D3EFC6C116B1351D008609D7 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,11 +18,14 @@
 #define API_CHECK_BEAN_CODE @"http://107.20.196.96/api/consumer/beans/validate.json?code="
 #define API_LOGIN @"http://107.20.196.96/api/consumer/sessions.json"
 #define API_GET_CONSUMER_BEANS @"http://107.20.196.96/api/consumer/beans/my_beans.json?auth_token="
+#define API_LOGOUT @"http://107.20.196.96/api/consumer/sessions/delete.json"
 
 #define CHECK_BEAN_CODE_SUCCESS_NOTIFICATION @"CHECK_BEAN_CODE_SUCCESS_NOTIFICATION"
 #define CHECK_BEAN_CODE_FAILURE_NOTIFICATION @"CHECK_BEAN_CODE_FAILURE_NOTIFICATION"
 #define LOGIN_SUCCESS_NOTIFICATION @"LOGIN_SUCCESS_NOTIFICATION"
 #define LOGIN_FAILURE_NOTIFICATION @"LOGIN_FAILURE_NOTIFICATION"
+#define LOGOUT_SUCCESS_NOTIFICATION @"LOGOUT_SUCCESS_NOTIFICATION"
+#define LOGOUT_FAILURE_NOTIFICATION @"LOGOUT_FAILURE_NOTIFICATION"
 #define GET_CONSUMER_BEANS_SUCCESS_NOTIFICATION @"GET_CONSUMER_BEANS_SUCCESS_NOTIFICATION"
 #define GET_CONSUMER_BEANS_FAILURE_NOTIFICATION @"GET_CONSUMER_BEANS_FAILURE_NOTIFICATION"
 
@@ -34,6 +37,8 @@
 - (void)checkBeanCodeValid:(NSString*)beanCode;
 - (void)login:(NSMutableDictionary*)user;
 - (void)getConsumerBeans;
+- (void)logout;
+
 - (NSMutableDictionary*)getUser;
 - (void)setUser:(NSMutableDictionary*)user;
 - (void)startHUD:(UIView*)theView;

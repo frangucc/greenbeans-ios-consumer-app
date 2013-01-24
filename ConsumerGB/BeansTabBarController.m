@@ -14,20 +14,15 @@
 
 @implementation BeansTabBarController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    // Notifications
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logoutSuccess:) name:LOGOUT_SUCCESS_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logoutFailure:) name:LOGOUT_FAILURE_NOTIFICATION object:nil];
+
     // Customize tabbar
     [self.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbar_bg_center.png"]];
     [self.tabBar setSelectionIndicatorImage:[UIImage imageNamed:@"tabbar_item_selected.png"]];
@@ -53,10 +48,32 @@
 - (void)doLogout
 {
     NSLog(@"BeansTabBarController - doLogout");
+    
+    // MBProgressHUD start
+    [[APIService getService] startHUD:self.view];
+
+    [[APIService getService] logout];
+}
+
+- (void)logoutSuccess:(NSNotification *)notification
+{
+    NSLog(@" logoutSuccess: %@", notification.object);
+
+    // MBProgressHUD stop
+    [[APIService getService] stopHUD:self.view];
+
     // Reset currently logged-in user, so user needs to log in again
     [[APIService getService] setUser:[[NSMutableDictionary alloc] init]];
     // Back to Claim Beans screen
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)logoutFailure:(NSNotification *)notification
+{
+    NSLog(@" logoutFailure");
+
+    // MBProgressHUD stop
+    [[APIService getService] stopHUD:self.view];
 }
 
 

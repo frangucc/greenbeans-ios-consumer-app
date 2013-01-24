@@ -143,6 +143,59 @@ static APIService * service;
 	NSLog(@"Queue finished");
 }
 
+/**
+ * LOGOUT
+ */
+- (void)logout
+{
+    NSLog(@"APIService - logout");
+    [self setNetworkQueue:[ASINetworkQueue queue]];
+	[[self networkQueue] setDelegate:self];
+    
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:API_LOGOUT]];
+    
+    [request setDelegate:self];
+	[request setDidFinishSelector:@selector(logoutFinished:)];
+	[request setDidFailSelector:@selector(logoutFailed:)];
+    [request addRequestHeader:@"Content-Type" value:@"application/json"];
+    [request addRequestHeader:@"Accept" value:@"application/json"];
+    [request setRequestMethod:@"POST"];
+    [request setTimeOutSeconds:10];
+    
+    [[self networkQueue] addOperation:request];
+    
+    [[self networkQueue] setQueueDidFinishSelector:@selector(logoutQueueFinished:)];
+    
+    [[self networkQueue] go];
+}
+
+- (void)logoutFinished:(ASIHTTPRequest *)request
+{
+    NSLog(@"logoutFinished");
+    NSString *theJsonStr = [request responseString];
+    NSLog(@"loginFinished: %@", theJsonStr);
+    if ([theJsonStr JSONValue] != [NSNull null]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:LOGOUT_SUCCESS_NOTIFICATION object:[theJsonStr JSONValue]];
+    } else {
+        [[NSNotificationCenter defaultCenter] postNotificationName:LOGOUT_FAILURE_NOTIFICATION object:nil];
+    }
+
+}
+
+- (void)logoutFailed:(ASIHTTPRequest *)request
+{
+    NSLog(@"logoutFailed");
+    [[NSNotificationCenter defaultCenter] postNotificationName:LOGOUT_FAILURE_NOTIFICATION object:nil];
+}
+
+- (void)logoutQueueFinished:(ASINetworkQueue *)queue
+{
+	// Could release the queue here
+	if ([[self networkQueue] requestsCount] == 0) {
+		[self setNetworkQueue:nil];
+	}
+	NSLog(@"Queue finished");
+}
 
 /**
  * GET CONSUMER BEANS
