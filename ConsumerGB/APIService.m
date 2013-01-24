@@ -144,6 +144,62 @@ static APIService * service;
 }
 
 
+/**
+ * GET CONSUMER BEANS
+ */
+- (void)getConsumerBeans
+{
+    NSLog(@"APIService - getConsumerBeans");
+    
+    [self setNetworkQueue:[ASINetworkQueue queue]];
+	[[self networkQueue] setDelegate:self];
+    
+    NSString *authToken = [[[APIService getService] getUser] objectForKey:@"auth_token"];
+    NSString *getConsumerBeansURL = [NSString stringWithFormat:@"%@%@", API_GET_CONSUMER_BEANS, authToken];
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:getConsumerBeansURL]];
+    
+    [request setDelegate:self];
+	[request setDidFinishSelector:@selector(getConsumerBeansFinished:)];
+	[request setDidFailSelector:@selector(getConsumerBeansFailed:)];
+    [request addRequestHeader:@"Content-Type" value:@"application/json"];
+    [request addRequestHeader:@"Accept" value:@"application/json"];
+    [request setRequestMethod:@"GET"];
+    [request setTimeOutSeconds:10];
+    
+    [[self networkQueue] addOperation:request];
+    
+    [[self networkQueue] setQueueDidFinishSelector:@selector(getConsumerBeansQueueFinished:)];
+    
+    [[self networkQueue] go];
+}
+
+- (void)getConsumerBeansFinished:(ASIHTTPRequest *)request
+{
+    NSString *theJsonStr = [request responseString];
+//    NSLog(@"getConsumerBeansFinished: %@", theJsonStr);
+    if ([theJsonStr JSONValue] != [NSNull null]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:GET_CONSUMER_BEANS_SUCCESS_NOTIFICATION object:[theJsonStr JSONValue]];
+    } else {
+        [[NSNotificationCenter defaultCenter] postNotificationName:GET_CONSUMER_BEANS_FAILURE_NOTIFICATION object:nil];
+    }
+
+}
+
+- (void)getConsumerBeansFailed:(ASIHTTPRequest *)request
+{
+    NSLog(@"getConsumerBeansFailed");
+    [[NSNotificationCenter defaultCenter] postNotificationName:GET_CONSUMER_BEANS_FAILURE_NOTIFICATION object:nil];
+}
+
+- (void)getConsumerBeansQueueFinished:(ASINetworkQueue *)queue
+{
+	// Could release the queue here
+	if ([[self networkQueue] requestsCount] == 0) {
+		[self setNetworkQueue:nil];
+	}
+	NSLog(@"Queue finished");
+}
+
 
 /**
  * GET/SET LOGGED-IN USER

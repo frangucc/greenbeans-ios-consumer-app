@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "HomeBeansViewController.h"
 
 @interface LoginViewController ()
 
@@ -19,7 +20,7 @@
     [super viewDidLoad];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginSuccess:) name:LOGIN_SUCCESS_NOTIFICATION object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginFailure:) name:CHECK_BEAN_CODE_FAILURE_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginFailure:) name:LOGIN_FAILURE_NOTIFICATION object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,8 +72,6 @@
     return YES;
 }
 
-
-
 - (IBAction)loginAction:(id)sender
 {
     [self hideKeyboardTouchDown:nil];
@@ -103,6 +102,17 @@
     NSLog(@" loginFailure");
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"Please try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSLog(@"prepareForSegue");
+    if ([[segue identifier] isEqualToString:@"loginSuccessSegue"])
+    {
+        // Get reference to HomeBeansVC
+        
+        // Pass any objects to the view controller here, like...
+    }
 }
 
 

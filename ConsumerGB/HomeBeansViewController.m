@@ -18,6 +18,10 @@
 {
     [super viewDidLoad];
     
+    // Notifications
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getConsumerBeansSuccess:) name:GET_CONSUMER_BEANS_SUCCESS_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getConsumerBeansFailure:) name:GET_CONSUMER_BEANS_FAILURE_NOTIFICATION object:nil];
+
     // Customize Back button
     UIButton *backBtn =  [UIButton buttonWithType:UIButtonTypeCustom];
     [backBtn setBackgroundImage:[UIImage imageNamed:@"back_btn.png"] forState:UIControlStateNormal];
@@ -74,6 +78,31 @@
 {
     NSLog(@"starBtnAction");
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    NSLog(@"HomeBeansViewController - viewWillAppear");
+    [super viewWillAppear:animated];
+    
+    [self prepareData];
+}
+
+- (void)prepareData
+{
+    NSLog(@"HomeBeansViewController - prepareData");
+    [[APIService getService] getConsumerBeans];
+}
+
+- (void)getConsumerBeansSuccess:(NSNotification *)notification
+{
+    NSLog(@" getConsumerBeansSuccess: %@", notification.object);
+}
+
+- (void)getConsumerBeansFailure:(NSNotification *)notification
+{
+    NSLog(@" getConsumerBeansFailure");
+}
+
 
 - (void)didReceiveMemoryWarning
 {

@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "APIService.h"
 
+@class HomeBeansViewController;
+
 @interface LoginViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *emailInput;
 @property (weak, nonatomic) IBOutlet UITextField *passInput;
