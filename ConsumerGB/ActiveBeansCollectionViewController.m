@@ -2,7 +2,7 @@
 //  ActiveBeansCollectionViewController.m
 //  ConsumerGB
 //
-//  Created by Anh Viet on 1/24/13.
+//  Created by Srikanth on 1/24/13.
 //  Copyright (c) 2013 GreenBeans. All rights reserved.
 //
 
@@ -14,20 +14,32 @@
 
 @implementation ActiveBeansCollectionViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
+
+
+#pragma mark - UICollectionViewDataSource
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return [_beans count];
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell *myCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BeanCell" forIndexPath:indexPath];
+
+    return myCell;
+}
+
 
 - (void)didReceiveMemoryWarning
 {

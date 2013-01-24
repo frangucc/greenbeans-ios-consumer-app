@@ -23,7 +23,8 @@
     // Init
     _activeBeansVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ActiveBeansCollectionVC"];
     [self.view addSubview:_activeBeansVC.view];
-    [self.view sendSubviewToBack:_activeBeansVC.view];
+    [self addChildViewController:_activeBeansVC];
+    [_activeBeansVC.view setFrame:CGRectMake(12, 110, 296, 260)];
 
     // Notifications
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getConsumerBeansSuccess:) name:GET_CONSUMER_BEANS_SUCCESS_NOTIFICATION object:nil];
@@ -78,7 +79,9 @@
 
 - (void)backBtnAction:(id)sender
 {
-    [self.tabBarController.navigationController popViewControllerAnimated:YES];
+    NSLog(@"Back");
+    HomeBeansViewController *homeBeansVC = (HomeBeansViewController*) [self.tabBarController.navigationController.viewControllers objectAtIndex:1];
+    [self.tabBarController.navigationController popToViewController:homeBeansVC animated:YES];
 }
 
 - (void)starBtnAction:(id)sender
