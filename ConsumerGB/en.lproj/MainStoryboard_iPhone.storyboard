@@ -552,7 +552,6 @@
                                 </state>
                                 <connections>
                                     <action selector="loginAction:" destination="Lr2-sj-xcT" eventType="touchUpInside" id="eBp-9v-kmj"/>
-                                    <segue destination="Urc-UE-yfz" kind="push" id="CQ6-ZB-wAN"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="signin_form.png" id="1UT-Ch-yER">
@@ -589,6 +588,7 @@
                     <connections>
                         <outlet property="emailInput" destination="7M0-Fp-OWD" id="07u-cY-a0U"/>
                         <outlet property="passInput" destination="LG1-KD-USD" id="vut-fe-kSp"/>
+                        <segue destination="Urc-UE-yfz" kind="push" identifier="loginSuccessSegue" id="vDe-gE-Vz7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OvF-py-roL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -673,58 +673,12 @@
         <image name="top_shadow.png" width="320" height="44"/>
         <image name="use_beans_btn.png" width="281" height="50"/>
     </resources>
-    <classes>
-        <class className="BeansTabBarController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BeansTabBarController.h"/>
-        </class>
-        <class className="ClaimBeansViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ClaimBeansViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="claimBeansAction:"/>
-                <relationship kind="action" name="hideKeyboard:"/>
-                <relationship kind="action" name="hideKeyboardTouchDown:"/>
-                <relationship kind="action" name="myBeansAction:"/>
-                <relationship kind="outlet" name="claimBeansBlockView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="errMsg" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="tokenInput" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="HomeBeansViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeBeansViewController.h"/>
-        </class>
-        <class className="LoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="hideKeyboard:"/>
-                <relationship kind="action" name="hideKeyboardTouchDown:"/>
-                <relationship kind="action" name="loginAction:"/>
-                <relationship kind="outlet" name="emailInput" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="passInput" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="SignupViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SignupViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="hideKeyboard:"/>
-                <relationship kind="action" name="hideKeyboardTouchDown:"/>
-                <relationship kind="outlet" name="emailInput" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="nameInput" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="passInput" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="playBeansBtn" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="CQ6-ZB-wAN"/>
+        <segue reference="vDe-gE-Vz7"/>
     </inferredMetricsTieBreakers>
 </document>

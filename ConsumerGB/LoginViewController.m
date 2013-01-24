@@ -87,12 +87,22 @@
     NSLog(@" loginSuccess: %@", notification.object);
     if (200 == [[notification.object objectForKey:@"status"] intValue]) {
         [[APIService getService] setUser:[notification.object objectForKey:@"user"]];
+        [self performSegueWithIdentifier:@"loginSuccessSegue" sender:self];
+    } else {
+        NSString *msg = [notification.object objectForKey:@"message"];
+        if (!msg || 0 == [msg length]) {
+            msg = @"Please try again.";
+        }
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:msg delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
     }
 }
 
 - (void)loginFailure:(NSNotification *)notification
 {
-    NSLog(@" loginFailureß");
+    NSLog(@" loginFailure");
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"Please try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
 }
 
 
