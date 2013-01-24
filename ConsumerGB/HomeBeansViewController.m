@@ -24,7 +24,7 @@
     _activeBeansVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ActiveBeansCollectionVC"];
     [self.view addSubview:_activeBeansVC.view];
     [self addChildViewController:_activeBeansVC];
-    [_activeBeansVC.view setFrame:CGRectMake(12, 110, 296, 260)];
+    [_activeBeansVC.view setFrame:CGRectMake(12, 110, 296, 250)];
 
     // Notifications
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getConsumerBeansSuccess:) name:GET_CONSUMER_BEANS_SUCCESS_NOTIFICATION object:nil];
@@ -106,6 +106,11 @@
 - (void)getConsumerBeansSuccess:(NSNotification *)notification
 {
     NSLog(@" getConsumerBeansSuccess: %@", notification.object);
+    // Set active beans from API response
+    _activeBeansVC.beans = [[notification.object objectForKey:@"active_beans"] valueForKey:@"codes"];
+    [_activeBeansVC.collectionView reloadData];
+    // Set the label
+    _youHaveBeansLabel.text = [NSString stringWithFormat:@"You have %d active beans", [_activeBeansVC.beans count]];
 }
 
 - (void)getConsumerBeansFailure:(NSNotification *)notification
@@ -133,4 +138,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidUnload {
+    [self setYouHaveBeansLabel:nil];
+    [super viewDidUnload];
+}
 @end

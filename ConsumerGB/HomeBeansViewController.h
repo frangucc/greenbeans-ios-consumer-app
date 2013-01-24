@@ -14,6 +14,7 @@
 
 @interface HomeBeansViewController : UIViewController <UIAlertViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UILabel *youHaveBeansLabel;
 @property (strong, nonatomic) ActiveBeansCollectionViewController *activeBeansVC;
 
 @end
