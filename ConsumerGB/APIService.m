@@ -152,6 +152,8 @@ static APIService * service;
     [self setNetworkQueue:[ASINetworkQueue queue]];
 	[[self networkQueue] setDelegate:self];
     
+    NSString *authToken = [[[APIService getService] getUser] objectForKey:@"auth_token"];
+    
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:API_LOGOUT]];
     
     [request setDelegate:self];
@@ -160,6 +162,8 @@ static APIService * service;
     [request addRequestHeader:@"Content-Type" value:@"application/json"];
     [request addRequestHeader:@"Accept" value:@"application/json"];
     [request setRequestMethod:@"POST"];
+    [request setPostValue:authToken forKey:@"auth_token"];
+
     [request setTimeOutSeconds:10];
     
     [[self networkQueue] addOperation:request];

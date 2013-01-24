@@ -7,6 +7,7 @@
 //
 
 #import "BeansTabBarController.h"
+#import "HomeBeansViewController.h"
 
 @interface BeansTabBarController ()
 
@@ -62,10 +63,13 @@
     // MBProgressHUD stop
     [[APIService getService] stopHUD:self.view];
 
-    // Reset currently logged-in user, so user needs to log in again
-    [[APIService getService] setUser:[[NSMutableDictionary alloc] init]];
-    // Back to Claim Beans screen
-    [self.navigationController popViewControllerAnimated:YES];
+    if (200 == [[notification.object objectForKey:@"status"] intValue]) {
+        // Reset currently logged-in user, so user needs to log in again
+        [[APIService getService] setUser:[[NSMutableDictionary alloc] init]];
+        // Back to Claim Beans screen
+        HomeBeansViewController *homeBeansVC = (HomeBeansViewController*) [self.navigationController.viewControllers objectAtIndex:1];
+        [self.navigationController popToViewController:homeBeansVC animated:YES];
+    }
 }
 
 - (void)logoutFailure:(NSNotification *)notification

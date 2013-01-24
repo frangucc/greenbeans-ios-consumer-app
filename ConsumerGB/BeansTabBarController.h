@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "APIService.h"
 
+@class HomeBeansViewController;
+
 @interface BeansTabBarController : UITabBarController
 
 - (void)doLogout;
