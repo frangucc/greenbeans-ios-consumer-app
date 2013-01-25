@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "APIService.h"
+
+@class LoginViewController;
 
 @interface SignupViewController : UIViewController <UITextFieldDelegate>
 
@@ -16,4 +19,6 @@
 
 - (IBAction)hideKeyboard:(id)sender;
 - (IBAction)hideKeyboardTouchDown:(id)sender;
+- (IBAction)signupAction:(id)sender;
+
 @end

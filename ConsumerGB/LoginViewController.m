@@ -19,6 +19,7 @@
 {
     [super viewDidLoad];
 
+    // Notifications
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginSuccess:) name:LOGIN_SUCCESS_NOTIFICATION object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginFailure:) name:LOGIN_FAILURE_NOTIFICATION object:nil];
 }
@@ -27,6 +28,15 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    NSLog(@"LoginViewController - viewWillAppear");
+    [super viewWillAppear:animated];
+    
+    _emailInput.text = _email;
+    _passInput.text = _password;
 }
 
 
@@ -95,11 +105,11 @@
         [[APIService getService] setUser:[notification.object objectForKey:@"user"]];
         [self performSegueWithIdentifier:@"loginSuccessSegue" sender:self];
     } else {
-        NSString *msg = [notification.object objectForKey:@"message"];
-        if (!msg || 0 == [msg length]) {
-            msg = @"Please try again.";
+        NSString *errMsg = [notification.object objectForKey:@"message"];
+        if (!errMsg || 0 == [errMsg length]) {
+            errMsg = @"Please try again.";
         }
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:msg delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:errMsg delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
     }
 }
@@ -115,22 +125,13 @@
     [alert show];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    NSLog(@"prepareForSegue");
-    if ([[segue identifier] isEqualToString:@"loginSuccessSegue"])
-    {
-        // Get reference to HomeBeansVC
-        
-        // Pass any objects to the view controller here, like...
-    }
-}
-
 
 - (void)viewDidUnload
 {
     [self setEmailInput:nil];
     [self setPassInput:nil];
+    [self setEmail:nil];
+    [self setPassword:nil];
     [super viewDidUnload];
 }
 

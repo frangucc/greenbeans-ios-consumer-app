@@ -7,6 +7,7 @@
 //
 
 #import "SignupViewController.h"
+#import "LoginViewController.h"
 
 @interface SignupViewController ()
 
@@ -17,7 +18,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+
+    // Notifications
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(signupSuccess:) name:SIGNUP_SUCCESS_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(signupFailure:) name:SIGNUP_FAILURE_NOTIFICATION object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,6 +73,67 @@
     
     return YES;
 }
+
+
+- (IBAction)signupAction:(id)sender
+{
+    [self hideKeyboardTouchDown:nil];
+    
+    // MBProgressHUD start
+    [[APIService getService] startHUD:self.view];
+    
+    NSMutableDictionary *user = [[NSMutableDictionary alloc] initWithObjectsAndKeys:_emailInput.text, @"email", _passInput.text, @"password", nil];
+    [[APIService getService] signup:user];
+}
+
+- (void)signupSuccess:(NSNotification *)notification
+{
+    NSLog(@" signupSuccess: %@", notification.object);
+    
+    // MBProgressHUD stop
+    [[APIService getService] stopHUD:self.view];
+    
+    if (200 == [[notification.object objectForKey:@"status"] intValue]) {
+        [self performSegueWithIdentifier:@"gotoLoginScreenSegue" sender:self];
+    } else {
+        // Reset email & password fields
+        _emailInput.text = @"";
+        _passInput.text = @"";
+        
+        NSString *errMsg = [[notification.object objectForKey:@"message"] objectAtIndex:0];
+        if (!errMsg || 0 == [errMsg length]) {
+            errMsg = @"Please try again";
+        }
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Signup Failed" message:errMsg delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];        
+    }
+}
+
+- (void)signupFailure:(NSNotification *)notification
+{
+    NSLog(@" signupFailure");
+    
+    // MBProgressHUD stop
+    [[APIService getService] stopHUD:self.view];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Signup Failed" message:@"Please try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSLog(@"prepareForSegue");
+    if ([[segue identifier] isEqualToString:@"gotoLoginScreenSegue"]) {
+        //Get reference to LoginVC
+        LoginViewController *loginVC = [segue destinationViewController];
+        
+        // Pass email/password
+        loginVC.email = _emailInput.text;
+        loginVC.password = _passInput.text;
+    }
+}
+
 
 
 - (void)viewDidUnload {

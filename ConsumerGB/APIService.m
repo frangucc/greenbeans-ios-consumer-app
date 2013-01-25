@@ -143,6 +143,63 @@ static APIService * service;
 	NSLog(@"Queue finished");
 }
 
+
+/**
+ * SIGNUP
+ */
+- (void)signup:(NSMutableDictionary*)user
+{
+    NSLog(@"APIService - signup: %@", user);
+    
+    [self setNetworkQueue:[ASINetworkQueue queue]];
+	[[self networkQueue] setDelegate:self];
+    
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:API_SIGNUP]];
+    
+    [request setDelegate:self];
+	[request setDidFinishSelector:@selector(signupFinished:)];
+	[request setDidFailSelector:@selector(signupFailed:)];
+    [request addRequestHeader:@"Content-Type" value:@"application/json"];
+    [request addRequestHeader:@"Accept" value:@"application/json"];
+    [request setRequestMethod:@"POST"];
+    [request setPostValue:[user objectForKey:@"email"] forKey:@"user[email]"];
+    [request setPostValue:[user objectForKey:@"password"] forKey:@"user[password]"];
+    [request setTimeOutSeconds:10];
+    
+    [[self networkQueue] addOperation:request];
+    
+    [[self networkQueue] setQueueDidFinishSelector:@selector(signupQueueFinished:)];
+    
+    [[self networkQueue] go];
+}
+
+- (void)signupFinished:(ASIHTTPRequest *)request
+{
+    NSString *theJsonStr = [request responseString];
+    NSLog(@"signupFinished: %@", theJsonStr);
+    if ([theJsonStr JSONValue] != [NSNull null]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:SIGNUP_SUCCESS_NOTIFICATION object:[theJsonStr JSONValue]];
+    } else {
+        [[NSNotificationCenter defaultCenter] postNotificationName:SIGNUP_FAILURE_NOTIFICATION object:nil];
+    }
+}
+
+- (void)signupFailed:(ASIHTTPRequest *)request
+{
+    NSLog(@"signupFailed");
+    [[NSNotificationCenter defaultCenter] postNotificationName:SIGNUP_FAILURE_NOTIFICATION object:nil];
+}
+
+- (void)signupQueueFinished:(ASINetworkQueue *)queue
+{
+	// Could release the queue here
+	if ([[self networkQueue] requestsCount] == 0) {
+		[self setNetworkQueue:nil];
+	}
+	NSLog(@"Queue finished");
+}
+
+
 /**
  * LOGOUT
  */

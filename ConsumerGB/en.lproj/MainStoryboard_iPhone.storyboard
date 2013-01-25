@@ -493,6 +493,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="signupAction:" destination="Zl8-PS-VkO" eventType="touchUpInside" id="MGX-O3-3SZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OCW-fo-KVN">
                                 <rect key="frame" x="25" y="350" width="270" height="73"/>
@@ -506,7 +509,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Lr2-sj-xcT" kind="push" id="ujV-36-ZYI"/>
+                                    <segue destination="Lr2-sj-xcT" kind="push" identifier="gotoLoginScreenSegue" id="ujV-36-ZYI"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" id="82K-nX-ORl">

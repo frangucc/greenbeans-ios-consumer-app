@@ -19,6 +19,7 @@
 #define API_LOGIN @"http://107.20.196.96/api/consumer/sessions.json"
 #define API_GET_CONSUMER_BEANS @"http://107.20.196.96/api/consumer/beans/my_beans.json?auth_token="
 #define API_LOGOUT @"http://107.20.196.96/api/consumer/sessions/delete.json"
+#define API_SIGNUP @"http://107.20.196.96/api/consumer/registrations.json"
 
 #define CHECK_BEAN_CODE_SUCCESS_NOTIFICATION @"CHECK_BEAN_CODE_SUCCESS_NOTIFICATION"
 #define CHECK_BEAN_CODE_FAILURE_NOTIFICATION @"CHECK_BEAN_CODE_FAILURE_NOTIFICATION"
@@ -28,6 +29,8 @@
 #define LOGOUT_FAILURE_NOTIFICATION @"LOGOUT_FAILURE_NOTIFICATION"
 #define GET_CONSUMER_BEANS_SUCCESS_NOTIFICATION @"GET_CONSUMER_BEANS_SUCCESS_NOTIFICATION"
 #define GET_CONSUMER_BEANS_FAILURE_NOTIFICATION @"GET_CONSUMER_BEANS_FAILURE_NOTIFICATION"
+#define SIGNUP_SUCCESS_NOTIFICATION @"SIGNUP_SUCCESS_NOTIFICATION"
+#define SIGNUP_FAILURE_NOTIFICATION @"SIGNUP_FAILURE_NOTIFICATION"
 
 @interface APIService : NSObject
 
@@ -38,6 +41,7 @@
 - (void)login:(NSMutableDictionary*)user;
 - (void)getConsumerBeans;
 - (void)logout;
+- (void)signup:(NSMutableDictionary*)user;
 
 - (NSMutableDictionary*)getUser;
 - (void)setUser:(NSMutableDictionary*)user;
