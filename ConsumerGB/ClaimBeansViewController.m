@@ -62,7 +62,7 @@
 
     if (isBeanCodeValid == YES) {
         NSLog(@"Valid bean code, go to Home Beans: %@", self.navigationController);
-        [self performSegueWithIdentifier:@"toHomeBeansSegue" sender:self];
+        [self myBeansAction:nil];
     } else {
         // Anim: move claim beans block down to show the error message
         [UIView animateWithDuration:0.3 animations:^ {

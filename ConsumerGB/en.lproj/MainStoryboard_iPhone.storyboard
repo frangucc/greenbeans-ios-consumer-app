@@ -441,7 +441,6 @@
                         <outlet property="claimBeansBlockView" destination="0oj-qK-eFl" id="i4Z-3G-PON"/>
                         <outlet property="errMsg" destination="MTc-Yv-cIu" id="8jb-0p-v1I"/>
                         <outlet property="tokenInput" destination="VU6-YW-0Q4" id="KM5-0X-elq"/>
-                        <segue destination="Urc-UE-yfz" kind="push" identifier="toHomeBeansSegue" id="qjM-y0-ODY"/>
                         <segue destination="Zl8-PS-VkO" kind="push" identifier="myBeansToSignupSegue" id="t95-Er-YSw"/>
                         <segue destination="Urc-UE-yfz" kind="push" identifier="myBeansToHomeBeansSegue" id="4mG-SC-2xl"/>
                     </connections>
@@ -726,6 +725,80 @@
         <image name="top_shadow.png" width="320" height="44"/>
         <image name="use_beans_btn.png" width="281" height="50"/>
     </resources>
+    <classes>
+        <class className="ActiveBeansCollectionViewController" superclassName="UICollectionViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ActiveBeansCollectionViewController.h"/>
+        </class>
+        <class className="BeanCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BeanCell.h"/>
+        </class>
+        <class className="BeansTabBarController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BeansTabBarController.h"/>
+        </class>
+        <class className="ClaimBeansViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ClaimBeansViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="claimBeansAction:"/>
+                <relationship kind="action" name="hideKeyboard:"/>
+                <relationship kind="action" name="hideKeyboardTouchDown:"/>
+                <relationship kind="action" name="myBeansAction:"/>
+                <relationship kind="outlet" name="claimBeansBlockView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="errMsg" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="tokenInput" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="HomeBeansViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeBeansViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="youHaveBeansLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="LoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="hideKeyboard:"/>
+                <relationship kind="action" name="hideKeyboardTouchDown:"/>
+                <relationship kind="action" name="loginAction:"/>
+                <relationship kind="outlet" name="emailInput" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="passInput" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="SettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="signoutAction:"/>
+            </relationships>
+        </class>
+        <class className="SignupViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SignupViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="hideKeyboard:"/>
+                <relationship kind="action" name="hideKeyboardTouchDown:"/>
+                <relationship kind="action" name="signupAction:"/>
+                <relationship kind="outlet" name="emailInput" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="nameInput" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="passInput" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="playBeansBtn" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
